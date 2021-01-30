@@ -8,7 +8,7 @@ while True:
 		print('Use "a" to add a new to do')
 		print('Use "e" to edit a to do ')
 		print('Use "r" to remove your to do')
-		print('Use "s" see your to do')
+		print('Use "s" to see your to do')
 		print('Use "q" to quit')
 	
 	elif cmds == "a":
@@ -39,7 +39,7 @@ while True:
 	   				f2.write('\n'.join(tasks))
 	   				print("Removed succefully")
 	   		except:
-	   			print("Some error occured")
+	   			print("Some error occurred")
 	   	
 	   else:
 	   	print("Add a to do first")
@@ -47,9 +47,9 @@ while True:
 	
 	
 	elif cmds == "s":
-		f_size = os.path.getsize("tasks.txt")
+		size = os.path.getsize("tasks.txt")
 		
-		if f_size > 0:
+		if size > 0:
 			with open("tasks.txt", "r") as see:
 				print(see.read())
 			
@@ -61,9 +61,9 @@ while True:
 		with open("tasks.txt", "r") as edit:
 			able = edit.readlines()
 			
-			sz = os.path.getsize("tasks.txt")
+			size = os.path.getsize("tasks.txt")
 			
-			if sz > 0:
+			if size > 0:
 				while "\n" in able:
 					able.remove("\n")
 					
@@ -80,13 +80,13 @@ while True:
 						final.write('\n'.join(able))
 						print("Succefully edited")
 				except:
-					print("Some error occured")
+					print("Some error occurred")
 					
 				
 			
 			
 			else:
-				print("Add a to do first")
+			      print("Add a to do first")
 	
 	
 	elif cmds == "q":
